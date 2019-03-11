@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/golang:1.9
 
-    working_directory: /go/src/github.com/dpetzold/terraform-aws-serverless/test
+    working_directory: /go/src/github.com/dpetzold/terraform-aws-serverless
     steps:
       - checkout
       - run:
@@ -18,10 +18,5 @@ jobs:
       - run:
           name: "Setup Environment"
           command: |
-            pwd
-            echo ${PEM_FILE} | base64 --decode > vpc-test.pem
-            ls ..
-            ls ../examples
-            ls ../examples/test-fixture
-            mv vpc-test.pem ../examples/test-fixture
+            echo ${PEM_FILE} | base64 --decode > examples/test-fixture/vpc-test.pem
       - run: go test -v ./...
