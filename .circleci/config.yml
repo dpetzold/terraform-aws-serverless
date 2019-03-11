@@ -14,5 +14,5 @@ jobs:
             wget -qO terraform.zip https://releases.hashicorp.com/terraform/0.11.12/terraform_0.11.12_linux_amd64.zip
             unzip terraform.zip
             chmod 755 terraform
-            echo ${PATH}
+            mv terraform /go/bin
       - run: go test -v ./...
