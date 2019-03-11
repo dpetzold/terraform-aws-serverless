@@ -20,5 +20,8 @@ jobs:
           command: |
             pwd
             echo ${PEM_FILE} | base64 --decode > vpc-test.pem
+            ls ..
+            ls ../examples
+            ls ../examples/test-fixture
             mv vpc-test.pem ../examples/test-fixture
       - run: go test -v ./...
