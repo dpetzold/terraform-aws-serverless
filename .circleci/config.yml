@@ -18,5 +18,5 @@ jobs:
       - run:
           name: "Setup Environment"
           command: |
-            echo ${PEM_FILE} | base64 -d > ../examples/test-fixture/vpc-test.pem
+            echo ${PEM_FILE} | base64 --decode > ../examples/test-fixture/vpc-test.pem
       - run: go test -v ./...
