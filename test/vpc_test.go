@@ -5,7 +5,6 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/aws"
 	"github.com/gruntwork-io/terratest/modules/random"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
@@ -14,8 +13,7 @@ import (
 func TestTerraformVpc(t *testing.T) {
 	t.Parallel()
 
-	awsRegion := aws.GetRandomStableRegion(t, nil, nil)
-
+	awsRegion := "us-west-2"
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../examples/test-fixture",
 		Vars: map[string]interface{}{
@@ -25,8 +23,6 @@ func TestTerraformVpc(t *testing.T) {
 	}
 
 	defer terraform.Destroy(t, terraformOptions)
-
 	terraform.InitAndApply(t, terraformOptions)
-
 	assert.Equal(t, awsRegion, terraform.Output(t, terraformOptions, "region"))
 }
