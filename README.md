@@ -1,4 +1,6 @@
-# Zappa AWS Module
+# Serverless AWS Module
+
+[![Build Status](https://circleci.com/gh/dpetzold/terraform-aws-serverless.svg?style=svg)](https://circleci.com/gh/dpetzold/terraform-aws-serverless)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
