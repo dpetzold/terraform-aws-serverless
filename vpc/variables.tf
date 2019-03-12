@@ -100,7 +100,7 @@ variable "database_allow_major_version_upgrade" {
 
 variable "redis_engine_version" {
   description = "redis engine version"
-  default     = "3.2.6"
+  default     = "5.0.3"
 }
 
 variable "redis_port" {
@@ -110,7 +110,7 @@ variable "redis_port" {
 
 variable "redis_parameter_group_name" {
   description = "redis parameter group name"
-  default     = "default.redis3.2"
+  default     = "default.redis5.0"
 }
 
 variable "redis_instance_type" {
