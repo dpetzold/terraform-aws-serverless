@@ -68,7 +68,7 @@ variable "database_engine_version" {
 
 variable "database_storage_encrypted" {
   description = "Database storage encrypted"
-  default     = "true"
+  default     = "false"
 }
 
 variable "database_backup_retention_period" {
