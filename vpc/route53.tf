@@ -6,6 +6,7 @@ resource "aws_route53_zone" "internal" {
   }
 }
 
+/*
 resource "aws_route53_record" "internal-ns" {
   zone_id = "${aws_route53_zone.internal.zone_id}"
   name    = "internal"
@@ -19,6 +20,7 @@ resource "aws_route53_record" "internal-ns" {
     "${aws_route53_zone.internal.name_servers.3}",
   ]
 }
+*/
 
 resource "aws_route53_record" "postgres" {
   zone_id = "${aws_route53_zone.internal.zone_id}"
