@@ -63,12 +63,12 @@ variable "database_allocated_storage" {
 
 variable "database_engine_version" {
   description = "Database engine version"
-  default     = "9.6.3"
+  default     = "10.6"
 }
 
 variable "database_storage_encrypted" {
   description = "Database storage encrypted"
-  default     = "false"
+  default     = "true"
 }
 
 variable "database_backup_retention_period" {
@@ -78,7 +78,7 @@ variable "database_backup_retention_period" {
 
 variable "database_family" {
   description = "Database family"
-  default     = "postgres9.6"
+  default     = "postgres10"
 }
 
 variable "database_read_replicas" {
@@ -89,6 +89,11 @@ variable "database_read_replicas" {
 variable "database_multi_az" {
   description = "Database multi az"
   default     = "false"
+}
+
+variable "database_allow_major_version_upgrade" {
+  description = "Allow major version upgrades"
+  default     = "true"
 }
 
 // ElastiCache
